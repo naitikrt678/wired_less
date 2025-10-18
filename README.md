@@ -58,7 +58,7 @@ wired_less/
 2. Note the IP address displayed in the PC app
 3. Open Android app and enter the PC's IP address and port (default 9999)
 4. Press Connect in the Android app
-5. Connect your controller to the Android device (e.g., "shwanwan android gamepad")
+5. Connect your controller to the Android device 
 6. Verify that input reflects in both the PC UI and XInput tester
 
 ## Background Operation
