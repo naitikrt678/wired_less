@@ -1,0 +1,6 @@
+@echo off
+echo Installing required packages...
+pip install -r requirements.txt
+echo Starting WiredLess Controller Bridge Server...
+python main.py
+pause
