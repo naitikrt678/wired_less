@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Mon Oct 20 15:31:52 IST 2025
+=======
+#Sat Oct 18 13:04:03 IST 2025
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
 base.0=C\:\\Users\\beher\\Desktop\\projects\\wired_less\\android_app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\beher\\Desktop\\projects\\wired_less\\android_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\beher\\Desktop\\projects\\wired_less\\android_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex

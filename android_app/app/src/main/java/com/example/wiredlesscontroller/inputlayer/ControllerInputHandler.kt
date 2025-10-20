@@ -17,6 +17,7 @@ class ControllerInputHandler {
     private var hatYState: Int = 0
     private var hatPresent: Boolean = false
     
+<<<<<<< HEAD
     // Track trigger button states for devices that report triggers as buttons
     private var leftTriggerButtonState: Boolean = false  // buttons[8]
     private var rightTriggerButtonState: Boolean = false // buttons[9]
@@ -31,6 +32,8 @@ class ControllerInputHandler {
     private var hasDetectedAxes: Boolean = false
     private var deviceName: String? = null
     
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
     // Button mapping constants - Updated to match XInput bit constants
     companion object {
         // XInput D-pad bit constants
@@ -51,14 +54,18 @@ class ControllerInputHandler {
         const val BUTTON_R3 = 0x0800
         // Home button mapping - using 0x0040 as specified
         const val BUTTON_HOME = 0x0040
+<<<<<<< HEAD
         
         // Trigger threshold for button-based triggers
         const val TRIGGER_THRESHOLD = 0.1f
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
     }
     
     fun handleKeyEvent(event: KeyEvent): Boolean {
         Log.d(TAG, "KeyEvent received: keyCode=${event.keyCode}, action=${event.action}, device=${event.device?.name}")
         
+<<<<<<< HEAD
         // Handle trigger buttons (buttons 8 and 9) - tester.py indicates these are left/right triggers
         when (event.keyCode) {
             10008 -> { // This is button index 8 (left trigger button)
@@ -73,6 +80,8 @@ class ControllerInputHandler {
             }
         }
         
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         val button = when (event.keyCode) {
             KeyEvent.KEYCODE_BUTTON_A -> {
                 Log.d(TAG, "A button detected")
@@ -182,6 +191,7 @@ class ControllerInputHandler {
         // Log motion events for debugging
         Log.d(TAG, "MotionEvent received: action=${event.action}, device=${inputDevice.name}")
         
+<<<<<<< HEAD
         // Detect axes on first frames for this device
         if (!hasDetectedAxes || deviceName != inputDevice.name) {
             detectAxes(inputDevice)
@@ -213,6 +223,15 @@ class ControllerInputHandler {
             val gasValue = event.getAxisValue(MotionEvent.AXIS_GAS)
             rightTrigger = Math.max(rightTrigger, Math.max(rTriggerValue, gasValue))
         }
+=======
+        // Process all axes
+        val leftXAxis = event.getAxisValue(MotionEvent.AXIS_X)
+        val leftYAxis = event.getAxisValue(MotionEvent.AXIS_Y)
+        val rightXAxis = event.getAxisValue(MotionEvent.AXIS_Z)
+        val rightYAxis = event.getAxisValue(MotionEvent.AXIS_RZ)
+        val leftTrigger = event.getAxisValue(MotionEvent.AXIS_LTRIGGER)
+        val rightTrigger = event.getAxisValue(MotionEvent.AXIS_RTRIGGER)
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         
         // Check for D-pad axes (HAT)
         val hatXAxis = event.getAxisValue(MotionEvent.AXIS_HAT_X)
@@ -220,8 +239,11 @@ class ControllerInputHandler {
         
         // Log axis values
         Log.d(TAG, "Axis values - LX:$leftXAxis, LY:$leftYAxis, RX:$rightXAxis, RY:$rightYAxis, LT:$leftTrigger, RT:$rightTrigger, HAT_X:$hatXAxis, HAT_Y:$hatYAxis")
+<<<<<<< HEAD
         Log.d(TAG, "Axis indices - LX:$leftXAxisIndex, LY:$leftYAxisIndex, RX:$rightXAxisIndex, RY:$rightYAxisIndex, LT:$leftTriggerAxisIndex, RT:$rightTriggerAxisIndex")
         Log.d(TAG, "Trigger button states - Left:$leftTriggerButtonState, Right:$rightTriggerButtonState")
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         
         // Handle D-pad from HAT axes as canonical source
         handleDpadFromHat(hatXAxis, hatYAxis)
@@ -235,6 +257,7 @@ class ControllerInputHandler {
         inputPacket.rightY = (-rightYAxis * 32767).toInt().toShort()
         
         // Normalize triggers to byte range (0 to 255)
+<<<<<<< HEAD
         // If we have analog trigger values, use them
         // Otherwise, fall back to button states
         if (leftTrigger > 0.0f) {
@@ -256,10 +279,15 @@ class ControllerInputHandler {
         }
         
         Log.d(TAG, "Final trigger values - Left:${inputPacket.leftTrigger}, Right:${inputPacket.rightTrigger}")
+=======
+        inputPacket.leftTrigger = (leftTrigger * 255).toInt().toByte()
+        inputPacket.rightTrigger = (rightTrigger * 255).toInt().toByte()
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         
         return true
     }
     
+<<<<<<< HEAD
     private fun detectAxes(device: InputDevice) {
         Log.d(TAG, "Detecting axes for device: ${device.name}")
         
@@ -315,6 +343,10 @@ class ControllerInputHandler {
     
     fun getCurrentPacket(): InputPacket {
         Log.d(TAG, "Getting current packet: buttons=${inputPacket.buttons}, LX=${inputPacket.leftX}, LY=${inputPacket.leftY}, hat=($hatXState,$hatYState), LT=${inputPacket.leftTrigger}, RT=${inputPacket.rightTrigger}")
+=======
+    fun getCurrentPacket(): InputPacket {
+        Log.d(TAG, "Getting current packet: buttons=${inputPacket.buttons}, LX=${inputPacket.leftX}, LY=${inputPacket.leftY}, hat=($hatXState,$hatYState)")
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         return inputPacket.copy()
     }
     
@@ -377,10 +409,13 @@ class ControllerInputHandler {
         hatXState = 0
         hatYState = 0
     }
+<<<<<<< HEAD
     
     // Reset trigger states
     fun resetTriggerStates() {
         leftTriggerButtonState = false
         rightTriggerButtonState = false
     }
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
 }

@@ -21,6 +21,7 @@ except ImportError:
     print("vgamepad not available. Please install it with: pip install vgamepad")
 
 
+<<<<<<< HEAD
 def get_local_ip():
     """Get the local IP address of the machine"""
     try:
@@ -39,6 +40,8 @@ def get_local_ip():
             return "127.0.0.1"
 
 
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
 class InputData:
     def __init__(self):
         self.buttons = 0
@@ -347,9 +350,12 @@ class MainWindow(QMainWindow):
         server_group = QGroupBox("Server Controls")
         server_layout = QFormLayout()
         
+<<<<<<< HEAD
         # Get local IP address
         local_ip = get_local_ip()
         
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         self.port_edit = QLineEdit("9999")
         self.start_button = QPushButton("Start Server")
         self.stop_button = QPushButton("Stop Server")
@@ -358,7 +364,10 @@ class MainWindow(QMainWindow):
         self.start_button.clicked.connect(self.start_server)
         self.stop_button.clicked.connect(self.stop_server)
         
+<<<<<<< HEAD
         server_layout.addRow("Local IP Address:", QLabel(local_ip))
+=======
+>>>>>>> 508e76bfb0a6b8f41cc465361ead5707bebf665a
         server_layout.addRow("Port:", self.port_edit)
         server_layout.addRow(self.start_button, self.stop_button)
         
