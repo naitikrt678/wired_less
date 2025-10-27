@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">WiredLessController</string>
-    <style name="Theme.WiredLessController" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        
-    </style>
-</resources>
