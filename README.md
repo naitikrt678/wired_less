@@ -24,7 +24,7 @@ wired_less/
 ├── windows_app/           # Windows Python application
 │   ├── main.py            # Main server application
 │   ├── requirements.txt   # Python dependencies
-│   └── run_server.bat     # Windows launcher
+│   └── run_server.bat     # Windows launcher script and dependency installer
 └── README.md
 ```
 
@@ -47,7 +47,9 @@ wired_less/
    ```
    Or run `run_server.bat` on Windows
 
-### Android Application Setup (if need to build app)
+   There's also a dedicated .exe in the dist folder of the windows app.
+
+### Android Application Setup (if need to build app, if not apk is in the outputs folder)
 1. Open the Android project in Android Studio
 2. Build and install the app on your Android device
 3. Connect a wired controller to your Android device via OTG
