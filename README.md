@@ -143,3 +143,6 @@ Bluetooth integration can be added by:
   4. Make sure the ViGEmBus driver is properly installed on the PC
   5. Try restarting both the Android app and PC server
   6. Check Android device logs for specific error messages
+
+  ## NOTE
+  The current build only supports controllers that have a dedicated "Android" mode. Xbox controllers straight up won't work and PS controllers will show wrong inputs.
