@@ -34,7 +34,7 @@ wired_less/
 1. Install ViGEmBus driver on Windows PC from [ViGEm Downloads](https://github.com/ViGEm/ViGEmBus/releases)
 2. Ensure both Android device and Windows PC are on the same Wi-Fi network
 
-### Windows Application Setup (if not using the .exe)
+### Windows Application Setup 
 1. Install Python 3.7 or higher
 2. Install required packages:
    ```
@@ -49,7 +49,7 @@ wired_less/
 
    There's also a dedicated .exe in the dist folder of the windows app.
 
-### Android Application Setup (if need to build app, if not apk is in the outputs folder)
+### Android Application Setup 
 1. Open the Android project in Android Studio
 2. Build and install the app on your Android device
 3. Connect a wired controller to your Android device via OTG
