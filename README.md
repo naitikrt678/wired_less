@@ -9,25 +9,6 @@ The system consists of three main layers:
 2. **TransportLayer**: Handles communication (Wi-Fi UDP currently, Bluetooth-ready)
 3. **OutputLayer**: Receives data and injects it via ViGEm on the PC
 
-## Project Structure
-
-```
-wired_less/
-├── android_app/          # Android Kotlin application
-│   ├── app/
-│   │   ├── src/main/java/com/example/wiredlesscontroller/
-│   │   │   ├── inputlayer/       # Controller input handling
-│   │   │   ├── transportlayer/   # Communication protocols
-│   │   │   └── MainActivity.kt   # Main application entry point
-│   │   └── src/main/res/
-│   └── build.gradle
-├── windows_app/           # Windows Python application
-│   ├── main.py            # Main server application
-│   ├── requirements.txt   # Python dependencies
-│   └── run_server.bat     # Windows launcher script and dependency installer
-└── README.md
-```
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -46,13 +27,6 @@ wired_less/
    python main.py
    ```
    Or run `run_server.bat` on Windows
-
-   There's also a dedicated .exe in the dist folder of the windows app.
-
-### Android Application Setup 
-1. Open the Android project in Android Studio
-2. Build and install the app on your Android device
-3. Connect a wired controller to your Android device via OTG
 
 ## Usage Instructions
 
@@ -128,6 +102,8 @@ The Windows app receives packets and translates them to XInput-compatible data u
 Bluetooth integration can be added by:
 1. Implementing a `BluetoothTransport` class that implements the Transport interface
 2. Enabling the Bluetooth mode toggle in the Android UI
+3. Multiple Controller Support, multiple phones, one pc server. 
+4. Xbox and PS controller support ie controllers that dont have a dedicated "Android Mode"
 
 ## Troubleshooting
 
